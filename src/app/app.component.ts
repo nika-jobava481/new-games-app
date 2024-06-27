@@ -10,4 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'quiz';
+  ngOnInit(){
+    console.log("app-v 0.1.0.0")
+  }
 }

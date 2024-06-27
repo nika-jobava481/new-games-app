@@ -1,0 +1,146 @@
+$color_1: white;
+$background-color_1: #111;
+$background-color_2: #222222;
+$background-color_3: #333;
+$background-color_4: #444;
+
+.quiz-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: $background-color_1;
+    color: $color_1;
+    box-sizing: border-box;
+    padding: 20px;
+
+    .top {
+        width: 100%;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 4px;
+        background-color: $background-color_2;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        background: linear-gradient(90deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+        border-radius: 8px;
+        // width: 5%;
+        transition: .3s;
+        text-align: center;
+        line-height: 4px;
+    }
+
+    .progress-text {
+        font-size: 18px;
+        color: #ffffff;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .timer {
+        font-size: 24px;
+        color: #4caf50;
+        text-align: center;
+    }
+
+    .content {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .question {
+        background-color: $background-color_2;
+        padding: 20px;
+        border-radius: 14px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .answers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        background-color: $background-color_2;
+        padding: 20px;
+        border-radius: 14px;
+
+        @media (max-width: 740px) {
+            grid-template-columns: 1fr; // One column per line on smaller screens
+        }
+    }
+
+    .answer {
+        margin: 10px 0;
+        padding: 2px;
+        background: linear-gradient(70deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+                #0000ff, #00ff00, #ffff00, #ff0000);
+        background-size: 400%;
+        animation: steam 100s linear infinite;
+
+        &:hover {
+            animation: steam 12s linear infinite;
+        }
+
+        button {
+
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            // border-radius: 8px;
+            background-color: $background-color_3;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+
+            &.outline {
+                outline: 2px solid red;
+
+                &#true {
+                    outline: 2px solid green;
+                }
+
+            }
+
+            &:hover:not(:disabled) {
+                background-color: $background-color_4;
+            }
+
+            &:disabled {
+                background-color: #888;
+                cursor: not-allowed;
+                color: #ccc;
+            }
+
+            &:active:not(:disabled) {
+                background-color: #555;
+            }
+        }
+    }
+
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

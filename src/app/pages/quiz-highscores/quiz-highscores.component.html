@@ -1,0 +1,28 @@
+<div class="page-container">
+    <div class="high-scores-container">
+        <h1 class="high-scores-title">High Scores</h1>
+
+        <table class="scores-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Points</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="highScores.length > 0; else noScores">
+                    <tr *ngFor="let score of highScores" class="score-item">
+                        <td>{{ score.username }}</td>
+                        <td>{{ score.points }} points</td>
+                        <td>{{ score.time }}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+
+        <ng-template #noScores>
+            <p>No high scores available.</p>
+        </ng-template>
+    </div>
+</div>

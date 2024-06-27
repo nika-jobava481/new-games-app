@@ -1,0 +1,16 @@
+<div class="results-container">
+    <div class="points">
+        Points: {{ points }}
+    </div>
+    <div class="points">
+        time: {{ time }}
+    </div>
+    <div class="input-container">
+        <div class="glow">
+            <input type="text" placeholder="Enter your username" [(ngModel)]="username" />
+        </div>
+        <div class="glow act">
+            <button (click)="submit()">Submit</button>
+        </div>
+    </div>
+</div>

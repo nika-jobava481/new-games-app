@@ -1,0 +1,7 @@
+<section class="home-wrapper">
+    <section class="games-wrapper">
+        <ng-container *ngFor="let game of gameList">
+            <app-game-preview [gameObj]="game"></app-game-preview>
+        </ng-container>
+    </section>
+</section>

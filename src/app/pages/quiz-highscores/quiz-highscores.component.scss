@@ -1,0 +1,64 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    /* Dark background color */
+    color: #ffffff;
+    /* White text color */
+}
+
+.high-scores-container {
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+.high-scores-title {
+    font-size: 36px;
+    color: #4caf50;
+    /* Green color for title */
+    margin-bottom: 20px;
+}
+
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    /* Darker background for table */
+    border: 1px solid #444;
+    /* Darker border for table */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow for table */
+}
+
+.scores-table th,
+.scores-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    /* Darker border between rows */
+}
+
+.scores-table th {
+    background-color: #333;
+    /* Darker background for table header */
+    color: #ffffff;
+    /* White text color for header */
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.scores-table tbody tr:nth-child(even) {
+    background-color: #222;
+    /* Dark background for even rows */
+}
+
+.scores-table tbody tr:hover {
+    background-color: #383838;
+    /* Darker background on hover */
+    transition: background-color 0.2s ease-in-out;
+    /* Smooth hover transition */
+}

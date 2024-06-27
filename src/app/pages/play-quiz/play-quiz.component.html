@@ -1,0 +1,31 @@
+<div class="quiz-page">
+    <div class="top">
+        <div class="progress-bar">
+            <div class="progress" [style]="'width:'+100/questionCount*step+'%;'">
+            </div>
+        </div>
+        <div class="progress-text-container">
+            <p class="progress-text">Question {{step}} / {{questionCount}}</p>
+            <p class="timer">{{ formatTimer(timer) }}</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="question">
+            <p>{{questions[step - 1].question}}</p> 
+        </div>
+
+        <div class="answers">
+
+            <ng-container *ngFor="let answer of questions[step - 1].answers">
+                <div class="answer">
+                    <button [id]="answer.correct" [ngClass]="{'outline': isDisabled}" (click)="getAnswer(answer.correct)" [disabled]="isDisabled">
+                        {{ answer.text }}
+                    </button>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+    <div class=""></div>
+</div>
