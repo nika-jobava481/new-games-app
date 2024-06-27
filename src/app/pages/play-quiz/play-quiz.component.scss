@@ -5,7 +5,7 @@ $background-color_3: #333;
 $background-color_4: #444;
 
 .quiz-page {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

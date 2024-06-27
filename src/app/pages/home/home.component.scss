@@ -1,14 +1,9 @@
-$background-color-darker: #0a0a0a; // Even darker background color
-$text-color-light: #ecf0f1; // Light text color for readability
-$glow-purple: rgba(138, 43, 226, 0.6); // Purple
-$glow-pink: rgba(255, 20, 147, 0.6); // Pink
-$glow-blue: rgba(0, 191, 255, 0.6); // Blue
+$background-color-darker: #0a0a0a;
 
 .home-wrapper {
     background-color: $background-color-darker;
     color: $text-color-light;
-    height: 100vh; // Ensure it takes full height of the viewport
-    max-height: 100vh; // Ensure it takes full height of the viewport
+    min-height: 100vh; 
     padding: 20px;
     box-sizing: border-box;
 
