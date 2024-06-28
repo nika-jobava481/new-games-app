@@ -1,0 +1,156 @@
+$color_1: #cc2c2c;
+
+.quiz-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+
+    .quiz-header {
+        text-align: center;
+        margin-bottom: 40px;
+
+
+
+
+        #glow {
+            -webkit-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            letter-spacing: 2px;
+            text-shadow: #f00 0 0 0;
+            color: $color_1;
+            font-size: 44px;
+            animation: brokenLightEffect 1s infinite;
+
+            &:hover {
+                text-shadow: #f00 0 0 10px;
+            }
+        }
+    }
+
+
+
+    .quiz-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 20px;
+
+        @media (max-width: 400px) {
+            flex-direction: column;
+
+
+        }
+
+        .glow-border {
+            padding: 2px;
+            background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+                    #0000ff, #00ff00, #ffff00, #ff0000);
+            background-size: 400%;
+            animation: steam 20s linear infinite;
+
+            &:hover {
+                animation: steam 8s linear infinite;
+            }
+
+
+            .quiz-button {
+                background-color: #222;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+
+                &.disabled{
+                    cursor: not-allowed;
+                    outline: 3px solid #222;
+                    color: #a1a1a1;
+                }
+
+                @media (max-width: 400px) {
+                    width: 100%;
+                }
+
+
+
+
+            }
+        }
+
+    }
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes textShadowPulse {
+    0% {
+        text-shadow: #f00 0 0 0px;
+    }
+
+    50% {
+        text-shadow: #f00 0 0 10px;
+    }
+
+    100% {
+        text-shadow: #f00 0 0 0px;
+    }
+}
+
+@keyframes brokenLightEffect {
+
+    0%,
+    100% {
+        text-shadow: #f00 0 0 0px;
+    }
+
+    10%,
+    21% {
+        text-shadow: #f00 0 0 10px;
+    }
+
+    21%,
+    24% {
+        text-shadow: #f00 0 0 0px;
+    }
+
+    30% {
+        text-shadow: #f00 0 0 10px;
+    }
+
+    33% {
+        text-shadow: #f00 0 0 0px;
+    }
+
+    45%,
+    90% {
+        text-shadow: #f00 0 0 10px;
+    }
+
+    95% {
+        text-shadow: #f00 0 0 5px;
+    }
+}

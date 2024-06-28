@@ -1,14 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  pointResult:number = 0;
-  timeResult:string = '';
+  pointResult: number = 0;
+  timeResult: string = '';
 
-  gridTimeResult:number=0;
+  gridTimeResult: number = 0;
 
   gamelist: any[] = [
     {
@@ -22,8 +24,9 @@ export class DataService {
       link: "/colorgrid"
     },
     {
-      name: "coming soon...",
-      img: "../../../assets/placeholder.png"
+      name: "sudoku",
+      img: "../../../assets/sudoku-pre.png",
+      link: "/sudoku",
     },
     {
       name: "coming soon...",
@@ -220,5 +223,14 @@ export class DataService {
 
 
 
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
+
+  getNewSudokuBoard(): Observable<any> {
+
+    const apiUrl = 'https://sudoku-api.vercel.app/api/dosuku';
+
+    const url = `${apiUrl}`;
+    return this.http.get<any>(url);
+  }
 }

@@ -8,21 +8,48 @@ import { ColorGridComponent } from './pages/color-grid/color-grid.component';
 import { ColorGridPlayComponent } from './pages/color-grid-play/color-grid-play.component';
 import { ColorGridResultComponent } from './pages/color-grid-result/color-grid-result.component';
 import { ColorGridHighscoresComponent } from './pages/color-grid-highscores/color-grid-highscores.component';
+import { SudokuComponent } from './pages/sudoku/sudoku.component';
+import { SudokuPlayComponent } from './pages/sudoku-play/sudoku-play.component';
 
 export const routes: Routes = [
-    { path: "home", component: HomeComponent },
-
-    { path: 'quiz', component: QuizComponent },
-    { path: 'quiz/play', component: PlayQuizComponent },
-    { path: 'quiz/result', component: QuizResultComponent },
-    { path: 'quiz/highscores', component: QuizHighscoresComponent },
-    
-    { path: "colorgrid", component: ColorGridComponent },
-    { path: 'colorgrid/play', component: ColorGridPlayComponent },
-    { path: 'colorgrid/result', component: ColorGridResultComponent },
-    { path: 'colorgrid/highscores', component: ColorGridHighscoresComponent },
-
-
-    { path: "", pathMatch: "full", redirectTo: "home" },
-    { path: "**", pathMatch: "full", redirectTo: "home" },
+    {
+        path: "home",
+        component: HomeComponent
+    },
+    {
+        path: 'quiz',
+        children: [
+            { path: '', component: QuizComponent },
+            { path: 'play', component: PlayQuizComponent },
+            { path: 'result', component: QuizResultComponent },
+            { path: 'highscores', component: QuizHighscoresComponent }
+        ]
+    },
+    {
+        path: 'colorgrid',
+        children: [
+            { path: '', component: ColorGridComponent },
+            { path: 'play', component: ColorGridPlayComponent },
+            { path: 'result', component: ColorGridResultComponent },
+            { path: 'highscores', component: ColorGridHighscoresComponent }
+        ]
+    },
+    {
+        path: "sudoku",
+        children: [
+            { path: '', component: SudokuComponent },
+            { path: 'play', component: SudokuPlayComponent }
+        ]
+    },
+    {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "home"
+    },
+    {
+        path: "**",
+        pathMatch: "full",
+        redirectTo: "home"
+    }
 ];
+

@@ -40,16 +40,18 @@ export class QuizResultComponent {
 
   submit() {
     this.saveResultsToLocalStorage()
+    this.dataService.pointResult = 0;
+    this.dataService.timeResult = '';
     this.router.navigateByUrl('/quiz/highscores');
   }
 
 
   ngOnInit() {
-    if (this.dataService.pointResult == 0 || this.dataService.timeResult == ''){
+    if (this.dataService.pointResult == 0 || this.dataService.timeResult == '') {
 
       this.router.navigateByUrl("/quiz")
     }
-      this.points = this.dataService.pointResult;
+    this.points = this.dataService.pointResult;
     this.time = this.dataService.timeResult;
   }
 

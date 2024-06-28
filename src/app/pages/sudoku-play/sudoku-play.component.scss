@@ -1,0 +1,134 @@
+$bold-border-value: 2px solid #fff;
+
+.sudoku-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #121212; // Dark background for the entire page
+    color: #fff; // White text color for the entire page
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); // 9 columns
+    grid-template-rows: repeat(9, 1fr); // 9 rows
+    gap: 1px; // Gap between cells
+    background-color: #1e1e1e; // Dark background color for the board
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.row {
+    display: contents; // Ensures each row does not break the grid
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border-radius: 4px;
+    background-color: #333;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+
+
+
+    &.disabled {
+        pointer-events: none;
+        color: #62d95b;
+    }
+
+    &:hover {
+        background-color: #444;
+    }
+    &.selected {
+        background-color: lightblue;
+        /* Change to desired selected cell color */
+    }
+
+}
+
+.numbers-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: #222;
+    /* Darker background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+.red-x {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #f00;
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+.number:hover,
+.red-x:hover {
+    transition: transform .3s;
+    transform: scale(1.1);
+}
+
+.flash-red {
+    animation: flashRed 0.2s;
+}
+
+@keyframes flashRed {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+
+@for $i from 0 through 8 {
+    @for $j from 0 through 8 {
+        [id="#{$i}-#{$j}"] {
+            @if ($i ==0 or $i ==3 or $i ==6) {
+                border-top: $bold-border-value;
+            }
+
+            @if ($i ==2 or $i ==5 or $i ==8) {
+                border-bottom: $bold-border-value;
+            }
+
+            @if ($j ==0 or $j ==3 or $j ==6) {
+                border-left: $bold-border-value;
+            }
+
+            @if ($j ==2 or $j ==5 or $j ==8) {
+                border-right: $bold-border-value;
+            }
+        }
+    }
+}
