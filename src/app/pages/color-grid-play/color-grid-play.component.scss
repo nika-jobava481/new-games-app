@@ -1,0 +1,99 @@
+.color-grid-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #222;
+    color: #fff;
+
+    .timer {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .winner-message {
+        margin-bottom: 20px;
+        font-size: 30px;
+        color: #00ff00;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(4, 100px);
+        gap: 5px;
+
+        .grid-cell {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+            /* Added transition for background color */
+        }
+
+        .grid-cell.selected {
+            transform: scale(1.1);
+            border: 2px solid #fff;
+        }
+
+        .grid-cell.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+    }
+
+    .buttons{
+        margin: 20px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .glow {
+            padding: 2px;
+            background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+                    #0000ff, #00ff00, #ffff00, #ff0000);
+            background-size: 400%;
+            animation: steam 20s linear infinite;
+    
+            &:hover {
+                animation: steam 8s linear infinite;
+            }
+    
+    
+            button {
+                background-color: #222;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+    
+                @media (max-width: 400px) {
+                    width: 100%;
+    
+    
+                }
+    
+    
+            }
+        }
+    }
+
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

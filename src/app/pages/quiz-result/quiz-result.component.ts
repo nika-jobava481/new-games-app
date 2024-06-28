@@ -45,7 +45,11 @@ export class QuizResultComponent {
 
 
   ngOnInit() {
-    this.points = this.dataService.pointResult;
+    if (this.dataService.pointResult == 0 || this.dataService.timeResult == ''){
+
+      this.router.navigateByUrl("/quiz")
+    }
+      this.points = this.dataService.pointResult;
     this.time = this.dataService.timeResult;
   }
 

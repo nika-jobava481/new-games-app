@@ -8,6 +8,8 @@ export class DataService {
   pointResult:number = 0;
   timeResult:string = '';
 
+  gridTimeResult:number=0;
+
   gamelist: any[] = [
     {
       name: "Quiz Game",
@@ -15,8 +17,9 @@ export class DataService {
       link: "/quiz"
     },
     {
-      name: "coming soon...",
-      img: "../../../assets/placeholder.png"
+      name: "color grid",
+      img: "../../../assets/colorgrid-pre.png",
+      link: "/colorgrid"
     },
     {
       name: "coming soon...",

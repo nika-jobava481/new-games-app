@@ -1,0 +1,16 @@
+<div class="color-grid-result">
+    <h1>Color Grid Game Result</h1>
+
+    <div class="result-info">
+        <p>Time taken: {{ timer }} seconds</p>
+    </div>
+
+    <div class="input-container">
+        <div class="glow">
+            <input type="text" placeholder="Enter your username" [(ngModel)]="username" />
+        </div>
+        <div class="glow act">
+            <button (click)="submit()">Submit</button>
+        </div>
+    </div>
+</div>

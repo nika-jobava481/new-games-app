@@ -1,0 +1,84 @@
+*{
+    outline: none;
+}
+
+.color-grid-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #222;
+    color: #fff;
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .result-info {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        gap: 30px;
+
+        .glow {
+            padding: 2px;
+            background: linear-gradient(70deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+                    #0000ff, #00ff00, #ffff00, #ff0000);
+            background-size: 400%;
+            animation: steam 100s linear infinite;
+
+            &.act {
+                animation: steam 40s linear infinite;
+
+                &:hover {
+                    animation: steam 12s linear infinite;
+                }
+            }
+
+
+            input {
+                padding: 12px;
+                border: none;
+                background-color: #333;
+                color: #ffffff;
+                font-size: 16px;
+                width: 300px;
+                text-align: center;
+
+            }
+
+            button {
+                padding: 12px 24px;
+                border: none;
+                background-color: #333;
+                color: #ffffff;
+                cursor: pointer;
+
+            }
+        }
+
+
+    }
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

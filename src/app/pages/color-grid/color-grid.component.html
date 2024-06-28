@@ -1,0 +1,25 @@
+
+
+<div class="quiz-page">
+    <div class="quiz-header">
+        <h1 class="glitch">
+            <span aria-hidden="true">{{title}}</span>
+            {{title}}
+            <span aria-hidden="true">{{title}}</span>
+        </h1>
+    </div>
+
+    <div class="quiz-content">
+        <!-- Quiz content (questions, options, etc.) -->
+    </div>
+
+    <div class="quiz-buttons">
+        <span class="glow-border">
+            <button [routerLink]="['play']" class="quiz-button start-button">Start color Grid</button>
+        </span>
+        <span class="glow-border"> 
+            <button [routerLink]="['highscores']" class="quiz-button highscores-button">View Highscores</button>
+        </span>
+
+    </div>
+</div>

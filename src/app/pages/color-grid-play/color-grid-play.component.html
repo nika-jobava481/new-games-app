@@ -1,0 +1,20 @@
+<div class="color-grid-game">
+    <div class="timer">
+        Time: {{ timer }}s
+    </div>
+    <div *ngIf="isWinner" class="winner-message">
+        You win!
+    </div>
+    <div class="grid">
+        <div *ngFor="let color of colors; let i = index" class="grid-cell" [ngStyle]="{'background-color': color}"
+            [class.selected]="i === firstClickIndex" (click)="handleCellClick(i)">
+        </div>
+    </div>
+    <ng-container *ngIf="isWinner">
+        <div class="buttons">
+            <div class="glow">
+                <button (click)="goToHighScores()">next</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
